@@ -59,8 +59,11 @@ Route::get('/Alertas/Activas', function () {
     return view('activas');
 });
 
-Route::get('/Alertas/historial', function () {
-    return "Ver historial de alertas resueltas";
+Route::get('Alertas/Historial', function () {
+    return view('halertas');
+});
+Route::get('/Admin/Sensores', function () {
+    return view('asensores');
 });
 #usuarios
 Route::get('/Usuarios', function () {

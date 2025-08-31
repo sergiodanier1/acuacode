@@ -175,12 +175,7 @@
           <!-- Mantengo exactamente las mismas opciones que tenías -->
           <li>
             <input type="checkbox" id="admin-sensores" {{ strpos($current, 'admin/sensores') !== false ? 'checked' : '' }}>
-            <label for="admin-sensores">Administrar Sensores</label>
-            <ul class="submenu">
-              <li><a href="{{ url('/Admin/Sensores/Agregar') }}" class="{{ $current === 'admin/sensores/agregar' ? 'active' : '' }}">Agregar sensor</a></li>
-              <li><a href="{{ url('/Admin/Sensores/Editar') }}" class="{{ $current === 'admin/sensores/editar' ? 'active' : '' }}">Editar sensor</a></li>
-              <li><a href="{{ url('/Admin/Sensores/Eliminar') }}" class="{{ $current === 'admin/sensores/eliminar' ? 'active' : '' }}">Eliminar sensor</a></li>
-            </ul>
+            <li><a href="{{ url('/Admin/Sensores') }}" class="{{ $current === 'admin/sensores' ? 'active' : '' }}">Administrar Sensores</a></li>
           </li>          <!-- agrega las demás secciones igual... -->                  
 
         </ul>
