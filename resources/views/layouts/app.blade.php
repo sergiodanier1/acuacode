@@ -181,18 +181,7 @@
               <li><a href="{{ url('/Admin/Sensores/Editar') }}" class="{{ $current === 'admin/sensores/editar' ? 'active' : '' }}">Editar sensor</a></li>
               <li><a href="{{ url('/Admin/Sensores/Eliminar') }}" class="{{ $current === 'admin/sensores/eliminar' ? 'active' : '' }}">Eliminar sensor</a></li>
             </ul>
-          </li>
-
-          <!-- agrega las demás secciones igual... -->
-          <li>
-            <input type="checkbox" id="config" {{ strpos($current, 'config') !== false ? 'checked' : '' }}>
-            <label for="config">Configuración</label>
-            <ul class="submenu">
-              <li><a href="{{ url('/Config/Umbrales') }}" class="{{ $current === 'config/umbrales' ? 'active' : '' }}">Umbrales de sensores</a></li>
-              <li><a href="{{ url('/Config/Intervalo') }}" class="{{ $current === 'config/intervalo' ? 'active' : '' }}">Intervalo de muestreo</a></li>
-              <li><a href="{{ url('/Config/Control') }}" class="{{ $current === 'config/control' ? 'active' : '' }}">Parámetros de control automático</a></li>
-            </ul>
-          </li>
+          </li>          <!-- agrega las demás secciones igual... -->                  
 
         </ul>
       </nav>

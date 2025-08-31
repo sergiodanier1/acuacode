@@ -55,8 +55,8 @@ Route::get('/Alertas', function () {
     return "Alertas y notificaciones";
 });
 
-Route::get('/Alertas/activas', function () {
-    return "Ver alertas activas";
+Route::get('/Alertas/Activas', function () {
+    return view('activas');
 });
 
 Route::get('/Alertas/historial', function () {
