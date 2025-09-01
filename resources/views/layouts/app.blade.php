@@ -184,9 +184,9 @@
 
     <!-- Footer fijo abajo del sidebar -->
     <div class="sidebar-footer">
-      <strong>© 2025</strong><br>
-      Jesus Armando<br>
-      Sergio Danier Cordoba
+      <strong>© 2025</strong>
+      <br>Jesus Armando Gomez Garzon
+      <br>Sergio Danier Cordoba Ceron
     </div>
   </div>
 
