@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FarmController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
@@ -65,6 +66,7 @@ Route::get('Alertas/Historial', function () {
 Route::get('/Admin/Sensores', function () {
     return view('asensores');
 });
+
 #usuarios
 Route::get('/Usuarios', function () {
     return "Gestión de Usuarios";
