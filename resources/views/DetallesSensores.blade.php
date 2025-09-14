@@ -54,8 +54,8 @@
 </head>
 <body>
 
-<h1>Monitor de Sensores en Tiempo Real</h1>
-<button onclick="iniciarSimulacion()">Iniciar Simulación</button>
+<h1>Monitor de Sensores</h1>
+<button onclick="iniciarSimulacion()">Iniciar</button>
 
 <div class="grid-container">
   <div class="grafica-container"><canvas id="graficaTemperatura"></canvas></div>
