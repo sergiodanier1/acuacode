@@ -60,14 +60,6 @@
 </head>
 <body>
   <div class="panel">
-    <div class="header">
-      <div class="logo">AQ</div>
-      <div>
-        <h1>Panel de control - Sistema acuapónico</h1>
-        <p class="lead">Presiona los botones para encender/apagar los actuadores.</p>
-      </div>
-    </div>
-
     <div class="grid" id="actuators">
       <div class="card"><button class="actuator-btn" data-id="lights"><div class="icon">💡</div><div class="label">Luces</div><div class="small">Estado: <span class="state-text">OFF</span></div></button></div>
       <div class="card"><button class="actuator-btn" data-id="dispenser"><div class="icon">📦</div><div class="label">Dispensador</div><div class="small">Estado: <span class="state-text">OFF</span></div></button></div>

@@ -26,7 +26,19 @@
       z-index: 1100;
     }
 
-    .header .logo { font-weight: 600; font-size:18px; }
+    .header .logo { 
+      font-weight: 600; 
+      font-size:18px; 
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .header .logo-img {
+      height: 40px;
+      width: auto;
+    }
+    
     .header .user { font-size:14px; opacity:0.9; }
 
     /* Sidebar */
@@ -53,7 +65,7 @@
     .menu ul { list-style:none; padding:0; margin:0; }
     .menu li { margin:6px 0; }
 
-    .menu a, .menu label {
+    .menu a {
       display:block;
       padding:10px;
       border-radius:8px;
@@ -62,7 +74,7 @@
       cursor: pointer;
       transition: background .18s;
     }
-    .menu a:hover, .menu label:hover { background: rgba(255,255,255,0.12); }
+    .menu a:hover { background: rgba(255,255,255,0.12); }
 
     /* active */
     .menu a.active {
@@ -70,20 +82,6 @@
       font-weight:600;
       color:#002233;
     }
-
-    /* submenus con identación */
-    .submenu { margin-left: 18px; display: none; }
-    .submenu li { margin:6px 0; }
-    .submenu a {
-      padding:8px 10px;
-      background: rgba(255,255,255,0.06);
-      border-radius:6px;
-      font-size:14px;
-    }
-
-    /* checkbox control para abrir */
-    .menu input[type="checkbox"] { display:none; }
-    .menu input[type="checkbox"]:checked ~ .submenu { display:block; }
 
     /* Footer dentro del sidebar */
     .sidebar-footer {
@@ -116,15 +114,15 @@
 
   <!-- Header -->
   <div class="header">
-    <div class="logo">Dashboard</div>
+    <div class="logo">
+      <img src="{{ asset('imagenes/acuacode.png') }}" alt="Acuacode Logo" class="logo-img">
+    </div>
     <div class="user">{{ Auth::user()->name ?? 'Invitado' }}</div>
   </div>
 
   <!-- Sidebar -->
   <div class="sidebar">
     <div>
-      <h2>Dashboard</h2>
-
       <nav class="menu" aria-label="Main menu">
         <ul>
           <li>
@@ -132,51 +130,64 @@
           </li>
 
           <li>
-            <input type="checkbox" id="sensores" {{ strpos($current, 'sensores') !== false ? 'checked' : '' }}>
-            <label for="sensores">Sensores</label>
-            <ul class="submenu">
-              <li><a href="{{ url('/Sensores') }}" class="{{ $current === 'sensores' ? 'active' : '' }}">Ver todos los sensores</a></li>
-              <li>
-                  <a href="{{ url('/Sensores/DetallesSensores') }}" class="{{ $current === 'sensores/detallessensores' ? 'active' : '' }}">
-                   histórico del sensor
-                  </a>
-              </li>
-            </ul>
+            <a href="{{ url('/Sensores') }}" class="{{ $current === 'sensores' ? 'active' : '' }}">Ver todos los sensores</a>
           </li>
 
           <li>
-            <input type="checkbox" id="historicos" {{ strpos($current, 'historicos') !== false ? 'checked' : '' }}>
-            <li><a href="{{ url('/historicos') }}" class="{{ $current === 'historicos' ? 'active' : '' }}">Historicos</a></li>
-          </li>
-          <li>
-            <input type="checkbox" id="vivo" {{ strpos($current, 'vivo') !== false ? 'checked' : '' }}>
-            <li><a href="{{ url('/vivo') }}" class="{{ $current === 'vivo' ? 'active' : '' }}">Datos en vivo</a></li>
-          </li>
-          <li>
-            <input type="checkbox" id="control" {{ strpos($current, 'control') !== false ? 'checked' : '' }}>
-            <label for="control">Control manual</label>
-            <ul class="submenu">
-              <li><a href="{{ url('/Control/bombas') }}" class="{{ $current === 'control/bombas' ? 'active' : '' }}">Activar / Desactivar bombas</a></li>
-              <li><a href="{{ url('/Control/luces') }}" class="{{ $current === 'control/luces' ? 'active' : '' }}">Encender luces</a></li>
-              <li><a href="{{ url('/Control/Valvulas') }}" class="{{ $current === 'control/valvulas' ? 'active' : '' }}">Ajustar válvulas</a></li>
-            </ul>
+            <a href="{{ url('/Sensores/DetallesSensores') }}" class="{{ $current === 'sensores/detallessensores' ? 'active' : '' }}">Histórico del sensor</a>
           </li>
 
           <li>
-            <input type="checkbox" id="alertas" {{ strpos($current, 'alertas') !== false ? 'checked' : '' }}>
-            <label for="alertas">Alertas</label>
-            <ul class="submenu">
-              <li><a href="{{ url('/Alertas/Activas') }}" class="{{ $current === 'alertas/activas' ? 'active' : '' }}">Ver alertas activas</a></li>
-              <li><a href="{{ url('/Alertas/Historial') }}" class="{{ $current === 'alertas/historial' ? 'active' : '' }}">Historial de alertas</a></li>
-            </ul>
+            <a href="{{ url('/historicos') }}" class="{{ $current === 'historicos' ? 'active' : '' }}">Históricos</a>
+          </li>
+          
+          <li>
+            <a href="{{ url('/vivo') }}" class="{{ $current === 'vivo' ? 'active' : '' }}">Datos en vivo</a>
+          </li>
+          
+          <li>
+            <a href="{{ url('/Control/bombas') }}" class="{{ $current === 'control/bombas' ? 'active' : '' }}">Activar / Desactivar bombas</a>
           </li>
 
-          <!-- Resto de menús: admin-sensores, admin-sistemas, admin-operarios, admin-granjas, usuarios, config -->
-          <!-- Mantengo exactamente las mismas opciones que tenías -->
           <li>
-            <input type="checkbox" id="admin-sensores" {{ strpos($current, 'admin/sensores') !== false ? 'checked' : '' }}>
-            <li><a href="{{ url('/Admin/Sensores') }}" class="{{ $current === 'admin/sensores' ? 'active' : '' }}">Administrar Sensores</a></li>
-          </li>          <!-- agrega las demás secciones igual... -->                  
+            <a href="{{ url('/Control/luces') }}" class="{{ $current === 'control/luces' ? 'active' : '' }}">Encender luces</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Control/Valvulas') }}" class="{{ $current === 'control/valvulas' ? 'active' : '' }}">Ajustar válvulas</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Alertas/Activas') }}" class="{{ $current === 'alertas/activas' ? 'active' : '' }}">Ver alertas activas</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Alertas/Historial') }}" class="{{ $current === 'alertas/historial' ? 'active' : '' }}">Historial de alertas</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Admin/Sensores') }}" class="{{ $current === 'admin/sensores' ? 'active' : '' }}">Administrar Sensores</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Admin/Sistemas') }}" class="{{ strpos($current, 'admin/sistemas') !== false ? 'active' : '' }}">Administrar Sistemas</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Admin/Operarios') }}" class="{{ strpos($current, 'admin/operarios') !== false ? 'active' : '' }}">Administrar Operarios</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Admin/Granjas') }}" class="{{ strpos($current, 'admin/granjas') !== false ? 'active' : '' }}">Administrar Granjas</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Usuarios') }}" class="{{ $current === 'usuarios' ? 'active' : '' }}">Usuarios</a>
+          </li>
+
+          <li>
+            <a href="{{ url('/Config') }}" class="{{ $current === 'config' ? 'active' : '' }}">Configuración</a>
+          </li>
 
         </ul>
       </nav>
