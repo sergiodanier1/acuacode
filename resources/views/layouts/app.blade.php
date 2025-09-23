@@ -134,18 +134,23 @@
           </li>
 
           <li>
-            <a href="{{ url('/Sensores/DetallesSensores') }}" class="{{ $current === 'sensores/detallessensores' ? 'active' : '' }}">Histórico del sensor</a>
+            <a href="{{ url('/Sensores/DetallesSensores') }}" class="{{ $current === 'sensores/detallessensores' ? 'active' : '' }}">Simulador de sensores</a>
           </li>
 
           <li>
-            <a href="{{ url('/historicos') }}" class="{{ $current === 'historicos' ? 'active' : '' }}">Históricos</a>
+            <a href="{{ url('/historicos') }}" class="{{ $current === 'historicos' ? 'active' : '' }}">Históricos año</a>
           </li>
-          
+          <li>
+            <a href="{{ url('/historicos/mes') }}" class="{{ $current === 'historicos/mes' ? 'active' : '' }}">Históricos mes</a>
+          </li>
           <li>
             <a href="{{ url('/vivo') }}" class="{{ $current === 'vivo' ? 'active' : '' }}">Datos en vivo</a>
           </li>
-          
           <li>
+            <a href="{{ url('/Admin/Sensores') }}" class="{{ $current === 'admin/sensores' ? 'active' : '' }}">Administrar Sensores</a>
+          </li>
+
+<!--         <li>
             <a href="{{ url('/Control/bombas') }}" class="{{ $current === 'control/bombas' ? 'active' : '' }}">Activar / Desactivar bombas</a>
           </li>
 
@@ -155,20 +160,15 @@
 
           <li>
             <a href="{{ url('/Control/Valvulas') }}" class="{{ $current === 'control/valvulas' ? 'active' : '' }}">Ajustar válvulas</a>
-          </li>
+          </li> -->
 
           <li>
             <a href="{{ url('/Alertas/Activas') }}" class="{{ $current === 'alertas/activas' ? 'active' : '' }}">Ver alertas activas</a>
           </li>
-
+<!--
           <li>
             <a href="{{ url('/Alertas/Historial') }}" class="{{ $current === 'alertas/historial' ? 'active' : '' }}">Historial de alertas</a>
           </li>
-
-          <li>
-            <a href="{{ url('/Admin/Sensores') }}" class="{{ $current === 'admin/sensores' ? 'active' : '' }}">Administrar Sensores</a>
-          </li>
-
           <li>
             <a href="{{ url('/Admin/Sistemas') }}" class="{{ strpos($current, 'admin/sistemas') !== false ? 'active' : '' }}">Administrar Sistemas</a>
           </li>
@@ -176,7 +176,6 @@
           <li>
             <a href="{{ url('/Admin/Operarios') }}" class="{{ strpos($current, 'admin/operarios') !== false ? 'active' : '' }}">Administrar Operarios</a>
           </li>
-
           <li>
             <a href="{{ url('/Admin/Granjas') }}" class="{{ strpos($current, 'admin/granjas') !== false ? 'active' : '' }}">Administrar Granjas</a>
           </li>
@@ -187,7 +186,7 @@
 
           <li>
             <a href="{{ url('/Config') }}" class="{{ $current === 'config' ? 'active' : '' }}">Configuración</a>
-          </li>
+          </li>-->
 
         </ul>
       </nav>
@@ -195,9 +194,10 @@
 
     <!-- Footer fijo abajo del sidebar -->
     <div class="sidebar-footer">
+    <a href="{{ url('/creditos') }}" class="{{ $current === 'creditos' ? 'active' : '' }}">
       <strong>© 2025</strong>
       <br>Jesus Armando Gomez Garzon
-      <br>Sergio Danier Cordoba Ceron
+      <br>Sergio Danier Cordoba Ceron</a>
     </div>
   </div>
 

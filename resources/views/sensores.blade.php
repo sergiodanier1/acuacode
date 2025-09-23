@@ -3,11 +3,8 @@
 @section('content')
 <div class="sensores-container">
     <!-- Encabezado de la página -->
-    <div class="page-header">
-        <h1>Sensores del Sistema Acuapónico</h1>
-        <p>Monitoreo integral de todos los parámetros críticos para el óptimo funcionamiento de tu sistema acuapónico</p>
-    </div>
-
+    <h1>Sensores del Sistema Acuapónico</h1>
+    <p>Monitoreo integral de todos los parámetros críticos para el óptimo funcionamiento de tu sistema acuapónico</p>
     <!-- Resumen estadístico -->
     <div class="stats-overview">
         <div class="stat-card">

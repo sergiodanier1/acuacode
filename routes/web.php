@@ -36,8 +36,15 @@ Route::get('/Sensores/detalles', function () {
 Route::get('/historicos', function () {
     return view('historicos');
 });
+Route::get('/historicos/mes', function () {
+    return view('mes');
+});
 Route::get('/vivo', function () {
     return view('vivo');
+});
+
+Route::get('/creditos', function () {
+    return view('creditos');
 });
 
 #control

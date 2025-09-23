@@ -222,14 +222,10 @@
 </head>
 <body>
     <div class="panel">
-        <div class="header">
-            <div class="logo">RA</div>
-            <div>
-                <h1>Registro Acuapónico Mensual</h1>
-                <p class="lead">Monitoreo de variables acuapónicas - Datos cargados desde GitHub</p>
-            </div>
-        </div>
-        
+        <div>
+            <h1>Registro Acuapónico Mensual</h1>
+            <p class="lead">Monitoreo de variables acuapónicas - Datos cargados desde GitHub</p>
+        </div>        
         <div class="data-controls">
             <div class="status-list">
                 <div class="dot" style="background:var(--accent)"></div>
