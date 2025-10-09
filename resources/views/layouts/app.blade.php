@@ -99,10 +99,68 @@
       padding: 22px;
     }
 
+    /* Estilos para las imágenes del footer */
+    .footer-images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .footer-img {
+      height: 40px;
+      width: auto;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-img:hover {
+      opacity: 1;
+    }
+
+    .footer-text {
+      margin-top: 5px;
+      font-size: 11px;
+    }
+
+    .footer-link {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: #cce7ff;
+    }
+
     /* responsive simple */
     @media (max-width:900px) {
       .sidebar { width: 220px; }
       .main { margin-left: 220px; }
+      
+      .footer-images {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .footer-img {
+        height: 35px;
+      }
+    }
+    
+    @media (max-width:600px) {
+      .sidebar { width: 200px; }
+      .main { margin-left: 200px; }
+      
+      .footer-img {
+        height: 30px;
+      }
+      
+      .footer-text {
+        font-size: 10px;
+      }
     }
   </style>
 </head>
@@ -138,11 +196,12 @@
           </li>
 
           <li>
-            <a href="{{ url('/historicos') }}" class="{{ $current === 'historicos' ? 'active' : '' }}">Históricos año</a>
+            <a href="{{ url('/historicos') }}" class="{{ $current === 'historicos' ? 'active' : '' }}">Históricos</a>
           </li>
-          <li>
+<!--          <li>
             <a href="{{ url('/historicos/mes') }}" class="{{ $current === 'historicos/mes' ? 'active' : '' }}">Históricos mes</a>
           </li>
+-->
           <li>
             <a href="{{ url('/vivo') }}" class="{{ $current === 'vivo' ? 'active' : '' }}">Datos en vivo</a>
           </li>
@@ -194,10 +253,20 @@
 
     <!-- Footer fijo abajo del sidebar -->
     <div class="sidebar-footer">
-    <a href="{{ url('/creditos') }}" class="{{ $current === 'creditos' ? 'active' : '' }}">
-      <strong>© 2025</strong>
-      <br>Jesus Armando Gomez Garzon
-      <br>Sergio Danier Cordoba Ceron</a>
+      
+      <!-- Texto de créditos -->
+      <div class="footer-text">
+        <a href="{{ url('/creditos') }}" class="footer-link {{ $current === 'creditos' ? 'active' : '' }}">
+          <strong>© 2025</strong>
+          <br>Jesus Armando Gomez Garzon
+          <br>Sergio Danier Cordoba Ceron
+        </a>
+      </div>
+            <!-- Imágenes de las instituciones -->
+      <div class="footer-images">
+        <img src="{{ asset('imagenes/autonoma.png') }}" alt="Universidad Autónoma" class="footer-img">
+        <img src="{{ asset('imagenes/sena.png') }}" alt="SENA" class="footer-img">
+      </div>
     </div>
   </div>
 

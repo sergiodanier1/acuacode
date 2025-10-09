@@ -85,7 +85,7 @@
 
 <script>
   // IP del ESP32 (incluye protocolo). Cambia por la IP que te muestre el monitor serie.
-  const ESP_IP = "http://192.168.1.12";
+  const ESP_IP = "http://192.168.1.1";
 
   // mapeo de ids del UI a índices que espera el ESP (0..3)
   const idToIndex = {
